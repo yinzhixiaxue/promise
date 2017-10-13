@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>//p2的状态受到了p1状态的改变，从而改变了自身的状态
+        var p1 = new Promise(function(resolve,reject){
+            setTimeout(function(){
+                resolve(new  Error("fail"))
+            },3000);
+        });
+        var p2 = new Promise(function(resolve,reject){
+            setTimeout(()=>resolve(p1),1000);
+        })
+        p2.then(result=>console.log(result))
+            .catch(error=>console.log(error));
+    </script>
+</body>
+</html>

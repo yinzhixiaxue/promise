@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        const p =Promise.race([
+                fetch('posts.json'),
+            new Promise(function(resolve,reject){
+                setTimeout(()=>reject(new Error("error")),5);
+            })
+        ]);
+        p.then(value=>console.log(value));
+        p.catch(error=>console.log(error));
+    </script>
+</body>
+</html>

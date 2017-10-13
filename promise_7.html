@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        new Promise((resolve,reject)=>{
+            resolve(1);//后面的代码依然会执行
+            console.log(2);
+        }).then(r=>{
+            console.log(r);
+        });
+        //2
+        //1
+    </script>
+</body>
+</html>

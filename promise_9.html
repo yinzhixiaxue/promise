@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>//比较2,3两种写法，可以发现reject方法的作用，等同于抛出错误。
+//        1
+//        var promise = new Promise(function(resolve,reject){
+//            throw new Error('test');
+//        });
+//        promise.catch(function(error){
+//            console.log(error);
+//        })
+//        2
+//        var promise = new Promise(function(resolve,reject){
+//             reject(new Error('test'));
+//        });
+//        promise.catch(function(error){
+//            console.log(error);
+//        })
+ //3
+        var promise = new Promise(function(resolve,reject){
+            try{
+                throw new Error('test3');
+            } catch(e){
+                reject(e);
+            }
+        });
+        promise.catch(function(error){
+            console.log(error);
+        })
+
+    </script>
+</body>
+</html>

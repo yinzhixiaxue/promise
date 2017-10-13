@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        const sb = function(){
+            return new Promise(function(resolve,reject){
+                console.log('qweq');
+                resolve(x+2);
+            });
+        };
+            sb().then(function(){
+                console.log("abc");
+            });
+            setTimeout(()=>{console.log(123);},2000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var promise = new Promise(function(resolve,reject){
+            resolve("ok");//状态改变了之后就没有办法恢复了，也就是说抛出异常没用了
+            throw new Error("error");
+        })
+        promise.then(function(value){
+            console.log(value);
+        }).catch(function(error){
+            console.log(error);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    Promise.resolve().catch(function(error){
+        console.log("oh no",error);
+    }).then(function(){
+        console.log("yes");
+    })
+</script>
+
+</body>
+</html>

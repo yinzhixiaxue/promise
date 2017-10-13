@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        new Promise((resolve,reject)=>{
+           return resolve(1);//后面的代码不会执行
+        console.log(2);
+        }).then(r=>{
+            console.log(r);
+        });
+    </script>
+</body>
+</html>
